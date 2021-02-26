@@ -16,7 +16,7 @@ module.exports = multerConfig = {
                 next(null, `${file.fieldname} - ${Date.now()}.${ext}`)
             }
         }),
-        limits: { fileSize: 1024 * 1024 * 5 },
+        limits: { fileSize: 1024 * 1024 * 3000 },
         fileFilter: (req, file, next) => {
 
             const image = file.mimetype.startsWith('image/') // type Image
