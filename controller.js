@@ -25,10 +25,10 @@ router.get('/say/:firstname/:lastname', (req, res) => {
 router.get('/product', async (req, res) => { //async เพื่อไม่ดึงมาเลย
     try {
         const result = await db.Products.findAll({
-            order: [
-                ['id', 'DESC']
-            ],
-            attributes: ['name', 'image'] // select name,image from products
+            //order: [
+            //    ['id', 'DESC']
+            //],
+            //attributes: ['name', 'image'] // select name,image from products
 
         }) //select all
         res.status(200).json(result)
@@ -43,8 +43,8 @@ router.get('/product/:id', async (req, res) => { //async เพื่อไม�
         const result = await db.Products.findOne({
             where: {
                 id: req.params.id
-            },
-            attributes: ['name', 'image'] // select name,image from products
+            }
+            //attributes: ['name', 'image'] // select name,image from products
 
         }) //select where
         if (result) {

@@ -9,10 +9,11 @@ const corsOptions = {
 
 
 //middle ware
+app.use('/images' , express.static('images'))
 app.use(cors(corsOptions)) //All
 app.use(express.json()) // อนุญ่าติรับพารามิเตอ JSon
 app.use(express.urlencoded({ extended: false }))
-app.use(require('./controller'))
+app.use('/api',require('./controller'))
 
 
 //Run Port Server
